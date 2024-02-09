@@ -1,0 +1,36 @@
+## Bing
+dplyr is a powerful package in R that provides a consistent set of verbs for efficient data manipulation. These verbs allow you to solve common data challenges with ease. Let's explore some of the key dplyr functions:
+- Data Frame Verbs:
+    - These functions primarily operate on rows of data frames:
+        - arrange(): Order rows based on column values.
+        - distinct(): Keep distinct or unique rows.
+        - filter(): Keep rows that match a condition.
+        - slice(): Subset rows using their positions.
+    - For columns:
+        - mutate(): Create, modify, or delete columns.
+        - pull(): Extract a single column.
+        - rename(): Rename columns.
+        - select(): Keep or drop columns by name or type.
+- Grouping Verbs:
+    - These functions work with groups of rows:
+        - count(): Count observations in each group.
+        - group_by(): Group by one or more variables.
+        - summarise(): Summarize each group down to one row.
+- Join Verbs:
+    - These functions combine data frames:
+        - inner_join(), left_join(), right_join(), full_join(): Perform different types of joins.
+        - nest_join(), semi_join(), anti_join(): Filtering joins.
+        - cross_join(): Cross join (cartesian product).
+- Vector Functions:
+    - These work on individual vectors (not data frames):
+        - between(): Detect where values fall in a specified range.
+        - case_when(): Generalized vectorized if-else.
+        - coalesce(): Find the first non-missing element.
+        - lag(), lead(): Compute lagged or leading values.
+- Other Useful Functions:
+    - n_distinct(): Count unique combinations.
+    - recode(): Recode values.
+    - row_number(): Generate row numbers.
+    - min_rank(), dense_rank(): Integer ranking functions.
+Remember, dplyr simplifies data manipulation, making your code more readable and efficient. Explore its full capabilities in your data projects! 📊🔧
+For a complete reference, check out the official dplyr documentation .
