@@ -1,0 +1,47 @@
+Unpopluar ai concept 
+Ai is broad felid 
+
+Market Basket analysis ai  affinity analysis
+under narrow ai 
+
+--> data in the market feild that deals with finding and assostion (a links/pattrens btwn 2 components )
+
+matrix os assosition analysis: (rules)
+1- itemset: is the combination of transaction on time becaouse am couting the proba of item based on the whole item set 
+
+2- support count: is counting single item or combination of 2,3 togather  among multiple transactions  frequency
+while support is the probabitly  of its presence 
+support= nb of an item purchased/ nb of all transactions
+
+3- confidence:  is conditinaly probabitly how likly y is bought when x is bought ? 
+confidence(x->y)=support(x,y)/support(x)
+
+4- lift: how likly y is bought when x is bought but taking consideration popularity of y 
+lift(x->y)=support(x,y)/support(x)*support(y)
+
+Threshold: value that should be claimed
+if support/confidence >= Threshold other wise i dont care about it becaouse no realtion of items being set togather
+
+apriori algorithm  
+1- if item set ( basket ) is frequent then all its items are frequent 
+2- proba(support ) of an items never exceeds the support of its subset
+y3ni support of milk w bread togther  ma ha tkoun akbr mn support of milk eza l milk wate 
+
+STEP 1: note threashold is logicaly set 
+support count table c1  and remove the count lower than the support threashold to get L1 table that filtered items and has only popular items 
+3/6/over 2/6 - 3/2 so we can directly use the support count
+
+
+STEP 2:
+Now we c2 tables do combinations each item with ALL items ( A B C)= AB Ac BC support count
+then we remove the items that is the minimum threshhold  to get L2
+
+STEP3:
+Now with L2 table we do 3 accourences toogather comabniations   c3 
+and also removing the ones with < the min threashold to get L3  table with the 3 items combinations filtered
+
+Now we calculate the assoscition rules
+confideince and lift for L2 and L3 one->2 combination  ex: ABC a->bc  b->ac  c->ab
+
+we set a min threshold  confidence level and choose the best that are above threshthold 
+
