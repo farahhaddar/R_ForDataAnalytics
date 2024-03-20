@@ -89,9 +89,9 @@ df <- df %>% distinct(var1, .keep_all = TRUE)
 # 4- Convert a categorical variable into a numeric variable
 df$gender <- ifelse(df$gender == "female", 0, 1)
 # 5- scaling numbers 
-#by standaraziation # Assuming df is your data frame and var1, var2 are the variables you want to standardize
+#by standaraziation # Assuming df is your data frame and var1, var2 are the variables you want to standardize if data is following nromal distribution 
 df[, c("var1", "var2")] <- scale(df[, c("var1", "var2")])
-# Assuming df is your data frame and var1, var2 are the variables you want to normalize
+# Assuming df is your data frame and var1, var2 are the variables you want to normalize 
 df[, c("var1", "var2")] <- lapply(df[, c("var1", "var2")], function(x) (x - min(x)) / (max(x) - min(x)))
 # 6- Assuming df is your data frame and var1, var2, var3 are the variables
 df <- data.frame(var1, var2, var3)

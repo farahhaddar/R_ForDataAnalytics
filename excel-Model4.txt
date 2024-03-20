@@ -1,0 +1,157 @@
+Excel is A  spread sheet of rows and columns used do calculations, simple data entry to complex financial modeling.
+
+DA steps in excel:
+Business Question
+Getting the data
+Exploring the data
+Cleaning the data
+Analyzing the data
+Presenting the findings
+
+excel shortcut ctrl G (define cell or range A1:A22 or A1:B22 will select both columns from 1 to 22)
+
+
+excel commands for data manipulation
+     compare:=EXACT(text1, text2) (t,f result)
+     format remove spaces =TRIM(text)
+     sorting: =SORT(range, [sort_index], [sort_order])
+          sort_index: column number we are  sorting based one 
+          ● sort_order:
+          ○ Ascending: True in google sheet (1) in exel 
+          ○ Descending: False (-1)
+     filter: =FILTER(range,criteria)     
+          
+Data Types in Excel
+     ● Text: strings, numbers or dates
+     ● Number: numeric values
+     ● Date: dates and times
+     ● Boolean: TRUE/FALSE
+
+     each type has a defult alignment:
+          ● Text: left aligned
+          ● Logical: center aligned
+          ● Numeric or datetime: right
+          aligned
+
+     Changing data type to perform analysis:
+          from number to text: =text(value,"formaT 0000000")
+          from text to number:=value(cell)
+          Rounding: =Round(cell,0 is the number of decimal)
+
+Data Cleaning and Transformation:
+     correcting, removing errors and refining 
+
+     type text: 
+          =CONCATENATE(value1," " to have space between the 2 wards  ,[value2]) -> To group 2 cells fname,lname 
+          =LOWER(cell) → Transforms all characters to lowercase
+          =UPPER(cell) → Transforms all characters to uppercase
+          =PROPER(cell) → Capitalizes each word
+          =LEN(cell) -> To get the number of characters of a text cell
+          =LEFT(cell,number_of_characters) or =RIGHT(text,number_of_characters)-> To extract characters from a text defult number is 1 
+          =SUBSTITUTE(cell, old_text in cell, new_text, [instance_num place of word am changing]) -> Replacing Text
+
+     Dates Type:
+          =cell1-cell2 -> time difference
+          =NOW() -> gives the  current full date and time
+          -7 , +7 ,+90  weeks/month before(-) or next ( + ) sametime
+          =EDate(Now(),nb of month)->time remove and give 3 month from Now
+          =EDMonth(Now(-1))+1 -> first day of current month 
+          =TODAY() just gives the date with no time 
+          =YEAR(date) -> extract the year 
+          =MONTH(date)-> extract the month nb (oct->10)
+          =WEEKDAY(date,[return_type (1 start sunday as first day of week  or 2 stars monday as first day of week  )])-> extract the day name 
+
+Data Analyzing in excel:
+     =COUNT() -> count number of cells that have numric values only 
+     =COUNTA()-> count number of cells non blank within a specific range, regardless of their type.
+     =COUNTBLANK()->count number of cells blank value within a specific range.
+     =COUNTIF()-> count number of cells within a specific range, based on a condition.
+
+     performing Calculations:
+          =SUM() -> sums the numerical values within a specific
+          range
+          =MIN() ->  To find min in numric range
+          =MAX() ->To find max in numric range
+          =AVERAGE()->To find avarege in numric range
+          =MEDIAN() ->to get  median of a specified data range even nbs we take 2 inn middle get their average 
+
+     Data Lookup: means finding data related to a specific information 
+          =INDEX(Range A1:A10, row_num, [column_num]) -> get info of a spesic place row retrive its intersect with column 
+          =MATCH(lookup_value, range A1:A10, [match_type 0 for exact match, 1 for approximate match in asd order,-1 for approximate match in asd order1  ]) -> to see if a text  found in  arange The MATCH function returns the position index of the lookup value within the lookup array
+          -->to get most out of the 2 fns we combine them 
+          index(A1:A10,Match(value,G1:G12,0))
+          match will get the index of value form the range G and index will return the value in range A on indexnb from match fn
+          ex: match returned row 5 the final result is name in column A row 5
+
+          -->alternativly we have Vlookup fn that is the most important one:
+
+          =VLOOKUP (lookup_value Text,table_array A1:C:12 , col_num of columnn i want to retrive my value , False return an exact match / true return an approximate)
+
+     Logical Functions:
+          =if(A>B,return value of true,return value if false)
+          =AND(A>B, A>B)-> if all conditions are true it returns true else it return false
+          =OR(A>B, A>B)-> if at least one conditions are true it returns true else it return false
+          Note we can write nested ifs and use fns inside each other 
+          if(avg(1)>avg(sum(A1:B2)),2,3)
+     
+     Aggregation Functions used to represent data based on a condition:
+          =unique() -> gets data that is distinct and not repeated 
+          =sort(unique()) -> combined 2 fn togther 
+          =COUNTIF(A1:A2, <100 ) 
+          =SUMIF(A1:A12, condition on range A, D1:D12 ) ->sum d range if condition apply to range a
+          =AVERAGEIF(A1:A12, condition on range A, D1:D12) -> return avrg of range D if condition applys to range A 
+
+     Visualizing Data   
+          Data is Better understand when its visulised and Excel has several charts that help us do this
+          
+          How to do it:
+          1. Represent your data properly by selecting the range we want 
+          2. Go to the Insert Tab
+          3. Pick a Chart
+
+          Charts:
+          Bar Charts: Useful to represent grouped/categories data
+          Pie Charts: Useful to represent data as percentages
+          Line Charts: Useful to represent trends and time dependent data 
+
+Advanced Excel Concepts:
+     Modify & Format Charts colors and styles
+     Conditional formatting heghlight cells based on a condition
+
+Data Pivoting:
+     Applying fn like sum,Count,MIN,MAX,STDEV and AVERAGE to efficiently deliver solutions to such analytical queries.
+
+ToolPack:
+    -> its an excel add on to do analysis.
+    -> The ToolPak offers a range of statistical
+     functions that includes descriptive
+     statistics, which are crucial for
+     summarizing data sets.
+     ->Additionally, it provides tools for
+     hypothesis testing, including t-tests,
+     F-tests and ANOVA tests.
+     -> It includes tools for data transformation, such as random number generation and sampling.
+     -> These are helpful for simulations or when dealing with large datasets where full data analysis is impractical.
+
+Connecting Data With Power Query:
+     Power Query allows you to import or connect to external
+     data, and then apply transformation to that data in ways
+     that meet your needs.
+     Then, you can load your query into Excel, and periodically,
+     you can refresh the data to make it up to date.
+     
+     The Four Phases of Power Query
+     1. Make connections to data in the cloud, on a service, or locally
+     2. Shape data to meet your needs, while the original source remains unchanged
+     (You can save the “Applied Steps” to be done automatically on new data)
+     3. Integrate data from multiple sources to get a unique view into the data
+     4. Complete your query and load it into a worksheet or Data Model and
+     periodically refresh it.
+
+Data Modelling With PowerPivot     
+PowerPivot can process and analyze large volumes of data far
+beyond the row and column limits of a standard Excel
+spreadsheet.
+Advanced data modeling can be done using PowerPivot. It
+allows creating relationships between different data tables,
+which is essential for building comprehensive models. 
